@@ -1,10 +1,5 @@
-import { db } from "@/db/client";
+import { redirect } from "next/navigation";
 
-export default async function Page() {
-  const result = await db.run("select 1 as ok");
-  return (
-    <main className="p-6">
-      <pre>{JSON.stringify(result, null, 2)}</pre>
-    </main>
-  );
+export default async function RootPage() {
+  redirect("/events");
 }
